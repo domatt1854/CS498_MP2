@@ -9,8 +9,7 @@ def num():
     if request.method == 'POST':
         command = ["python3", "stress_cpu.py"]
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        stdout, stderr = process.communicate()
-        return "Output: {}\nError: {}".format(stdout, stderr)
+        return "Ran Process."
         
     elif request.method == 'GET':
         return socket.gethostname()
